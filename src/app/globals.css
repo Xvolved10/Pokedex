@@ -2,32 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* global.css */
+
+.Pokédex {
+  font-size: 40px;
+  color: #DC092C;
+  font-weight: 900;
+  font-style: italic;
+  text-decoration: underline;
+  text-align: center;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.pokemon-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.pokemon-card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 10px;
+  width: 200px;
+  height: 250px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #DC092C; /* Ajoutez une bordure de couleur */
+  transition: box-shadow 0.3s ease; /* Ajoutez une transition */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.pokemon-card:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Augmentez le flou et l'étendue de l'ombre */
+}
+
+.pokemon-name {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: capitalize; /* Mettre la première lettre en majuscule */
+}
+
+.pokemon-id {
+  font-size: 14px;
+  color: #666666;
+}
+
+.pokemon-details {
+  margin-top: 12px;
+}
+
+/* Définissez des styles pour chaque type de Pokémon */
+.pokemon-type {
+  font-size: 16px;
+  color: #333333;
+}
+
+/* Ajoutez des styles spécifiques pour chaque type */
+.water {
+  color: #3B9EFF; /* Bleu pour le type Eau */
+}
+
+.fire {
+  color: #FF6B6B; /* Rouge pour le type Feu */
+}
+
+.grass {
+  color: #82D173; /* Vert pour le type Plante */
+}
+
+/* et ainsi de suite pour les autres types... */
+
+.pokemon-sprite {
+  margin-top: 12px;
+  width: 125px;
+  height: 125px;
 }
