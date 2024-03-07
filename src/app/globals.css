@@ -6,6 +6,24 @@
 
 
 /* global.css */
+.page{
+background-color: #125778;
+}
+
+.typeFilter{
+font-size: 24px;
+margin-left: 0.7em;
+margin-bottom: 2em;
+}
+
+.Pokédex {
+  font-size: 40px;
+  color: #DC092C;
+  font-weight: 900;
+  font-style: italic;
+  text-decoration: underline;
+  text-align: center;
+}
 
 .pokemon-list {
   display: flex;
@@ -14,44 +32,228 @@
 }
 
 .pokemon-card {
-  margin-top: 5vw;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 10px;
   width: 200px;
   height: 250px;
-  border: 1px solid #e43030;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 16px;
-  margin-bottom: 16px;
-  margin-right: 16px; 
+  text-align: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  text-align: center;
-  transition: transform 0.3s ease-in-out;
+  border: 5px solid #DC092C; /* Ajoutez une bordure de couleur */
+  transition: transform 0.3s ease; /* Ajoutez une transition */
 }
 
 .pokemon-card:hover {
+  box-shadow: 0 24px 36px rgba(0, 0, 0, 0.3); /* Augmentez le flou et l'étendue de l'ombre */
   transform: scale(1.1);
 }
 
 .pokemon-name {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
+  text-transform: capitalize; /* Mettre la première lettre en majuscule */
 }
 
-.pokemon-image {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 8px;
-}
-
-.pokemon-types {
+.pokemon-id {
   font-size: 14px;
-  color: #555;
+  color: #666666;
 }
 
+.pokemon-details {
+  margin-top: 12px;
+}
+
+.pokemon-types{
+display: flex;
+gap: 10px;
+
+}
+
+/* Définissez des styles pour chaque type de Pokémon */
+.pokemon-type {
+  font-size: 16px;
+  font-style: italic;
+  border-radius: 6px;
+  padding: 1px 5px 1px 5px ;
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 5px;
+  
+
+}
+
+.img-type{
+  width: 20px;
+  height: 20px;
+}
+/* Ajoutez des styles spécifiques pour chaque type */
+.water {
+  background-color: #3B9EFF; /* Bleu pour le type Eau */
+  color: black; /* Texte en blanc pour un meilleur contraste */
+}
+
+.fire {
+  background-color: #FF6B6B; /* Rouge pour le type Feu */
+  color: black; /* Texte en blanc pour un meilleur contraste */
+}
+
+.grass {
+  background-color: #82D173; /* Vert pour le type Plante */
+  color: black; /* Texte en blanc pour un meilleur contraste */
+}
+
+.normal {
+  background-color: #BDBDBD; /* Gris pour le type Normal */
+  color: black; /* Texte en blanc pour un meilleur contraste */
+}
+
+.fighting {
+  background-color: #C2185B; /* Rouge pour le type Combat */
+  color: black; /* Texte en blanc pour un meilleur contraste */
+}
+
+.poison {
+  background-color: #AA00FF; /* Violet pour le type Poison */
+  color: black; /* Texte en blanc pour un meilleur contraste */
+  
+}
+
+.ground {
+  background-color: #D4C29E; /* Beige pour le type Sol */
+  color: black; /* Texte en blanc pour un meilleur contraste */
+}
+
+.flying {
+  background-color: #81C1E2; /* Bleu clair pour le type Vol */
+  color: black; /* Texte en blanc pour un meilleur contraste */
+}
+
+.psychic {
+  background-color: #FF81C0; /* Rose pour le type Psy */
+  color: black; /* Texte en blanc pour un meilleur contraste */
+}
+
+.bug {
+  background-color: #92C830; /* Vert clair pour le type Insecte */
+  color: black; /* Texte en blanc pour un meilleur contraste */
+}
+
+.rock {
+  background-color: #A38C21; /* Marron pour le type Roche */
+  color: black; /* Texte en blanc pour un meilleur contraste */
+}
+
+.ghost {
+  background-color: #705898; /* Violet foncé pour le type Spectre */
+  color: black; /* Texte en blanc pour un meilleur contraste */
+}
+
+.dragon {
+  background-color: #6F35FC; /* Indigo pour le type Dragon */
+  color: black; /* Texte en blanc pour un meilleur contraste */
+}
+
+.dark {
+  background-color: #424242; /* Gris foncé pour le type Ténèbres */
+  color: black; /* Texte en blanc pour un meilleur contraste */
+}
+
+.steel {
+  background-color: #B8B8D0; /* Gris clair pour le type Acier */
+  color: black; /* Texte en blanc pour un meilleur contraste */
+}
+
+.fairy {
+  background-color: #EE99AC; /* Rose clair pour le type Fée */
+  color: black; /* Texte en blanc pour un meilleur contraste */
+}
+
+.electric {
+  background-color: #FFD700; /* Jaune pour le type Électrik */
+  color: black; /* Texte en blanc pour un meilleur contraste */
+}
+
+.ice {
+  background-color: #B3E5FC; /* Bleu clair pour le type Glace */
+  color: black; /* Texte en blanc pour un meilleur contraste */
+}
+
+.pokemon-sprite {
+  margin-top: 12px;
+  width: 125px;
+  height: 125px;
+}
+
+/* .pokemon-details{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 5px solid red;
+  border-radius: 6px;
+  width: 50%;
+  margin: auto;
+} */
 
 
 
+.pokemon-details {
+  perspective: 2000px;
 
+}
 
+.card {
+  width: 400px;
+  height: 600px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  cursor: pointer;
+  margin: auto;
+  padding: auto;
+
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.card .card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+
+}
+
+.front-face {
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  padding-top: 2em;
+
+}
+
+.back-face {
+  background-color: #c0c0c0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: rotateY(180deg);
+  border: 1px solid black;
+  padding-top: 2em;
+
+}
+
+.sprite-img {
+  width: 80%;
+  height: auto;
+}
