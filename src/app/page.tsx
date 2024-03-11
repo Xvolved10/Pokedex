@@ -10,6 +10,7 @@ import Link from "next/link";
 
 const Home: React.FC = () => {
   return (
+    
     <div className="page">
        <Link href="/">
               <h1 className="Pokédex">Pokédex</h1>

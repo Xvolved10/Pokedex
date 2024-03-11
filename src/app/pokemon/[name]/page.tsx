@@ -27,6 +27,7 @@ const PokemonDetailsPage: React.FC = () => {
   const [pokemonDescription, setPokemonDescription] = useState<string>("");
   const [prevPokemon, setPrevPokemon] = useState<PokemonDetails | null>(null);
   const [nextPokemon, setNextPokemon] = useState<PokemonDetails | null>(null);
+  const [isCardFlipped, setIsCardFlipped] = useState(false);
 
   useEffect(() => {
     const fetchPokemonDetails = async () => {
@@ -102,6 +103,11 @@ const PokemonDetailsPage: React.FC = () => {
   const playCry = () => {
     const audio = new Audio(pokemonDetails.cry);
     audio.play();
+  };
+
+  const handleClick = () => {
+    // Inversez l'état de la carte lorsqu'elle est cliquée
+    setIsCardFlipped((prev) => !prev);
   };
 
   const typeImages: Record<string, string> = {
@@ -189,7 +195,7 @@ const PokemonDetailsPage: React.FC = () => {
         }
 
         <div className="pokemon-details">
-          <div className="card">
+        <div className={`card ${isCardFlipped ? "flipped" : ""}`} onClick={handleClick}>
             <div className="card-face front-face">
               <div className="flex text-3xl font-bold mb-4 capitalize mt-4 gap-8">
                 <h1 className="">N° {pokemonDetails.id}</h1>
@@ -210,8 +216,13 @@ const PokemonDetailsPage: React.FC = () => {
                     />
                     <p>{type.type.name}</p>
                   </div>
+                  
                 ))}
               </div>
+              <p className="text-sm mb-2 text-center px-8">
+                {" "}
+                {pokemonDescription}
+              </p>
             </div>
             <div className="card-face back-face">
               <div className="flex text-3xl font-bold mb-4 capitalize mt-4 gap-8">
